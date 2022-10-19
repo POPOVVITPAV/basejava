@@ -34,8 +34,10 @@ public class ArrayStorage {
             if (Objects.equals(storage[i].uuid, uuid)) {
                 storage[i] = storage[size - 1];
                 storage[size - 1] = null;
+                break;
             }
         }
+        size--;
     }
 
     /**
