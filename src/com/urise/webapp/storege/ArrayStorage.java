@@ -1,3 +1,5 @@
+package com.urise.webapp.storege;
+import com.urise.webapp.modal.Resume;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -8,7 +10,7 @@ public class ArrayStorage {
     private Resume[] storage = new Resume[10000];
     private int size = 0;
 
-    void clear() {
+    public void clear() {
         Arrays.fill(storage, 0, size, null);
         size = 0;
     }
@@ -22,16 +24,16 @@ public class ArrayStorage {
 
     public Resume get(String uuid) {
         for (int i = 0; i < size; i++) {
-            if (Objects.equals(storage[i].uuid, uuid)) {
+            if (Objects.equals(storage[i].getUuid(), uuid)) {
                 return storage[i];
             }
         }
         return null;
     }
 
-    void delete(String uuid) {
+    public void delete(String uuid) {
         for (int i = 0; i < size; i++) {
-            if (Objects.equals(storage[i].uuid, uuid)) {
+            if (Objects.equals(storage[i].getUuid(), uuid)) {
                 storage[i] = storage[size - 1];
                 storage[size - 1] = null;
                 break;
@@ -47,7 +49,7 @@ public class ArrayStorage {
         return Arrays.copyOf(storage, size);
     }
 
-    int size() {
+    public int size() {
         return size;
     }
 }
