@@ -9,7 +9,7 @@ import com.urise.webapp.storege.ArrayStorage;
 public class MainTestArrayStorage {
     static final ArrayStorage ARRAY_STORAGE = new ArrayStorage();
 
-    public static void main(String[] args) {
+    public static void main(String[] args, String uuid) {
         Resume r1 = new Resume();
         r1.setUuid("uuid1");
         Resume r2 = new Resume();
@@ -17,9 +17,13 @@ public class MainTestArrayStorage {
         Resume r3 = new Resume();
         r3.setUuid("uuid3");
 
-        ARRAY_STORAGE.save(r1);
-        ARRAY_STORAGE.save(r2);
-        ARRAY_STORAGE.save(r3);
+        ARRAY_STORAGE.update(r1);
+        ARRAY_STORAGE.update(r2);
+        ARRAY_STORAGE.update(r3);
+
+        ARRAY_STORAGE.save(r1, uuid);
+        ARRAY_STORAGE.save(r2, uuid);
+        ARRAY_STORAGE.save(r3, uuid);
 
         System.out.println("Get r1: " + ARRAY_STORAGE.get(r1.getUuid()));
         System.out.println("Size: " + ARRAY_STORAGE.size());

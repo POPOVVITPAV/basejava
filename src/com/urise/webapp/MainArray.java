@@ -36,7 +36,7 @@ public class MainArray {
                 case "save":
                     r = new Resume();
                     r.setUuid(uuid);
-                    ARRAY_STORAGE.save(r);
+                    ARRAY_STORAGE.save(r, uuid);
                     printAll();
                     break;
                 case "delete":
