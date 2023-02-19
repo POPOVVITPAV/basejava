@@ -1,6 +1,8 @@
 package com.urise.webapp;
+
 import com.urise.webapp.modal.Resume;
 import com.urise.webapp.storege.ArrayStorage;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -36,7 +38,7 @@ public class MainArray {
                 case "save":
                     r = new Resume();
                     r.setUuid(uuid);
-                    ARRAY_STORAGE.save(r, uuid);
+                    ARRAY_STORAGE.save(r);
                     printAll();
                     break;
                 case "delete":
